@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Moq;
+using System.Text;
 
 namespace Word.Counter.Api.Tests.Fixtures;
 
@@ -12,7 +13,15 @@ public static class FileFixture
         var physicalFile = new FileInfo(filePath);
         var ms = new MemoryStream();
         var writer = new StreamWriter(ms);
-        writer.Write(physicalFile.OpenRead());
+        using (FileStream fs = physicalFile.OpenRead())
+        {
+            byte[] b = new byte[1024];
+
+            while (fs.Read(b, 0, b.Length) > 0)
+            {
+                writer.WriteLine(Encoding.Default.GetString(b));
+            }
+        }
         writer.Flush();
         ms.Position = 0;
         var fileName = physicalFile.Name;

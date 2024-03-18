@@ -13,7 +13,7 @@
     <None Remove="TestFiles\100mb-examplefile-com.txt" />
     <None Remove="TestFiles\100MB.txt" />
     <None Remove="TestFiles\big.txt" />
-    <None Remove="TestFiles\File.txt" />
+    <None Remove="TestFiles\MultipleSeparators.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,7 +39,7 @@
     <Content Include="TestFiles\big.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestFiles\File.txt">
+    <Content Include="TestFiles\MultipleSeparators.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

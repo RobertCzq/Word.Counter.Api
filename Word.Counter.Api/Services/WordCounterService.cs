@@ -9,7 +9,7 @@ public class WordCounterService(ILogger<WordCounterService> logger) : IWordCount
 {
     private readonly ILogger<WordCounterService> _logger = logger;
     private readonly char[] delimiters = [' ', '.', ',', ';', ':', '?', '!', '"', '(', ')',
-        '[', ']', '{', '}', '\n', '\r'];
+        '[', ']', '{', '}', '\n', '\r', '\0'];
 
     public byte[] GetWordCountByteContent(IFormFile file)
     {
