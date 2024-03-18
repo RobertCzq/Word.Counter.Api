@@ -1,0 +1,6 @@
+@Word.Counter.Api_HostAddress = http://localhost:5174
+
+GET {{Word.Counter.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
